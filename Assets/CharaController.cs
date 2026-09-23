@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
             if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveX = 1f;
         }
 
-        Vector3 movement = new Vector3(moveX, 0.0f, moveZ);
+        Vector3 movement = new Vector3(moveX, 0.0f, moveZ).normalized;
 
         transform.Translate(movement * speed * Time.deltaTime);
     }
